@@ -1,6 +1,36 @@
-# Zoom SDK Swift Package
+# CPZoomMeetingSDK
 
-This Swift Package provides a Swift Package Manager integration for the Zoom SDK for iOS.
+A Swift Package for integrating Zoom SDK into iOS applications.
+
+## Installation
+
+### Swift Package Manager
+
+1. Add the package to your Xcode project:
+   - In Xcode, go to File > Add Packages
+   - Enter the repository URL
+   - Select the version you want to use
+
+2. After adding the package, you need to reassemble the framework:
+   ```bash
+   chmod +x reassemble.sh
+   ./reassemble.sh
+   ```
+
+## Usage
+
+```swift
+import CPZoomMeetingSDK
+
+// Initialize the SDK
+let authService = MobileRTCAuthService()
+authService.sdkKey = "YOUR_SDK_KEY"
+authService.sdkSecret = "YOUR_SDK_SECRET"
+
+// Start a meeting
+let meetingService = MobileRTCMeetingService()
+meetingService.startMeeting(withMeetingNumber: "YOUR_MEETING_NUMBER", userName: "YOUR_USER_NAME")
+```
 
 ## Requirements
 
@@ -8,46 +38,9 @@ This Swift Package provides a Swift Package Manager integration for the Zoom SDK
 - Xcode 13.0+
 - Swift 5.5+
 
-## Installation
-
-### Swift Package Manager
-
-Add the following to your `Package.swift` file:
-
-```swift
-dependencies: [
-    .package(url: "YOUR_GITHUB_REPO_URL", from: "1.0.0")
-]
-```
-
-Or add it through Xcode:
-1. File > Add Packages...
-2. Enter your GitHub repository URL
-3. Select the version you want to use
-4. Click Add Package
-
-## Usage
-
-1. Import the package in your Swift files:
-```swift
-import ZoomSDK
-```
-
-2. Initialize the Zoom SDK in your app:
-```swift
-// In your AppDelegate or main app file
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Initialize Zoom SDK
-    MobileRTC.shared().initializeSDK()
-    return true
-}
-```
-
-3. Use the Zoom SDK features as needed in your app.
-
 ## License
 
-This package is licensed under the same terms as the Zoom SDK. Please refer to the Zoom SDK documentation for more details.
+This package is licensed under the MIT License. See the LICENSE file for details.
 
 ---
 Copyright ©2012-2025 Zoom Communications, Inc. All rights reserved.

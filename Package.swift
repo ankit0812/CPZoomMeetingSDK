@@ -9,9 +9,14 @@ let package = Package(
     products: [
         .library(
             name: "CPZoomMeetingSDK",
-            targets: ["MobileRTC"]),
+            targets: ["CPZoomMeetingSDK"]),
     ],
+    dependencies: [],
     targets: [
+        .target(
+            name: "CPZoomMeetingSDK",
+            dependencies: ["MobileRTC"],
+            path: "Sources/CPZoomMeetingSDK"),
         .binaryTarget(
             name: "MobileRTC",
             path: "lib/MobileRTC.xcframework"
