@@ -6,16 +6,10 @@ A Swift Package for integrating Zoom SDK into iOS applications.
 
 ### Swift Package Manager
 
-1. Add the package to your Xcode project:
-   - In Xcode, go to File > Add Packages
-   - Enter the repository URL
-   - Select the version you want to use
-
-2. After adding the package, you need to reassemble the framework:
-   ```bash
-   chmod +x reassemble.sh
-   ./reassemble.sh
-   ```
+Add the package to your Xcode project:
+- In Xcode, go to File > Add Packages
+- Enter the repository URL
+- Select the version you want to use
 
 ## Usage
 
