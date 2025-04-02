@@ -15,8 +15,7 @@ let package = Package(
     targets: [
         .target(
             name: "CPZoomMeetingSDK",
-            dependencies: [],
-            path: "Sources/CPZoomMeetingSDK"),
+            dependencies: ["MobileRTC"]),
         .binaryTarget(
             name: "MobileRTC",
             path: "lib/MobileRTC.xcframework"
